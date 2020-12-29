@@ -132,10 +132,16 @@ function draw() {
     obstaclesGroup.setLifetimeEach(-1);
     cloudsGroup.setLifetimeEach(-1);
     
-    if(touches.length>0 || keyDown("SPACE")) {      
-      reset();
+    if(touches.length>0 || keyDown("SPACE")&& trex.y >= 159) {      
+      trex.velocityY = -12;
+    }
       touches = []
     }
+trex.velocityY = trex.velocityY + 0.8
+
+if (mousePressedOver(restart)){
+reset();
+}
   }
   
   
